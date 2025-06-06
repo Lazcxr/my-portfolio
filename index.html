@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louis Alfred | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+
+  </head>
+
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-gray-900 text-white p-4">
+      <div class="flex items-center justify-between">
+        <h1 class="text-xl font-bold">My Portfolio</h1>
+        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">☰</button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex justify-end items-center gap-6 mt-4">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <button id="theme-toggle-desktop" class="text-xl">🌓</button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <nav id="mobile-nav" class="hidden flex-col gap-4 mt-4 md:hidden">
+        <a href="#about" class="block hover:underline">About</a>
+        <a href="#projects" class="block hover:underline">Projects</a>
+        <a href="#contact" class="block hover:underline">Contact</a>
+        <button id="theme-toggle-mobile" class="text-left text-xl mt-2">🌓</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="text-center my-10 fade-in">
+      <h2 class="text-3xl font-bold mb-2">Hi, I'm Louis Alfred Fontelo</h2>
+      <p class="text-lg">IT Support Specialist | Web Developer | Freelancer</p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-3xl mx-auto my-10 px-4 fade-in">
+      <h2 class="text-2xl font-bold mb-4">About Me</h2>
+      <p>I'm a web developer focused on building clean, responsive, and user-friendly websites. I enjoy turning ideas into functional and visually appealing digital experiences using HTML, CSS, JavaScript, and modern tools like Tailwind CSS. Currently, I work as an IT Support Specialist at Maryvit Affiliated Schools, where I'm assigned as an admin for our learning management system, Schoology, and also support PowerBuddy for Learning and PowerSchool SIS. I'm actively looking for a side hustle where I can apply and grow my development skills—especially in freelance web projects.</p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="max-w-3xl mx-auto my-10 px-4 fade-in">
+      <h2 class="text-2xl font-bold mb-4">Projects</h2>
+      <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg p-4 shadow-sm">
+        <h3 class="font-semibold">Project Title</h3>
+        <p class="text-sm">Brief description of the project.</p>
+        <a href="" target="_blank" class="text-blue-500 hover:underline">View Project</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="text-center my-10 px-4">
+      <h2 class="text-2xl font-bold mb-2">Contact</h2>
+      <p>Email: <a href="mailto:louisalfredfontelo@gmail.com" class="text-blue-500 hover:underline">louisalfredfontelo@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 dark:text-gray-400 my-10">
+      <p>&copy; 2025 Louis Alfred. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
