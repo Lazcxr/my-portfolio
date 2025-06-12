@@ -8,7 +8,6 @@
       name="description"
       content="Louis Alfred Fontelo's portfolio - IT Support Specialist, Web Developer, Freelancer. Explore my projects and contact me for freelance opportunities."
     />
-    <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="Louis Alfred | Portfolio" />
     <meta
       property="og:description"
@@ -16,11 +15,9 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://your-portfolio-url.com/" />
-    <!-- Add your image if available -->
     <!-- <meta property="og:image" content="https://your-portfolio-url.com/profile.jpg" /> -->
     <link rel="stylesheet" href="src/output.css" />
   </head>
-
   <body
     class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300"
   >
@@ -44,15 +41,21 @@
         class="hidden md:flex justify-end items-center gap-6 mt-4"
         aria-label="Main navigation"
       >
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#projects" class="hover:underline">Projects</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+        <a href="#about" class="hover:underline dark:hover:text-gray-300"
+          >About</a
+        >
+        <a href="#projects" class="hover:underline dark:hover:text-gray-300"
+          >Projects</a
+        >
+        <a href="#contact" class="hover:underline dark:hover:text-gray-300"
+          >Contact</a
+        >
         <button
           id="theme-toggle-desktop"
-          class="text-xl"
+          class="text-xl transition-transform duration-300 transform"
           aria-label="Toggle dark mode"
         >
-          🌓
+          🌙
         </button>
       </nav>
 
@@ -62,15 +65,25 @@
         class="hidden flex-col gap-4 mt-4 md:hidden"
         aria-label="Mobile navigation"
       >
-        <a href="#about" class="block hover:underline">About</a>
-        <a href="#projects" class="block hover:underline">Projects</a>
-        <a href="#contact" class="block hover:underline">Contact</a>
+        <a href="#about" class="block hover:underline dark:hover:text-gray-300"
+          >About</a
+        >
+        <a
+          href="#projects"
+          class="block hover:underline dark:hover:text-gray-300"
+          >Projects</a
+        >
+        <a
+          href="#contact"
+          class="block hover:underline dark:hover:text-gray-300"
+          >Contact</a
+        >
         <button
           id="theme-toggle-mobile"
-          class="text-left text-xl mt-2"
+          class="text-left text-xl mt-2 transition-transform duration-300 transform"
           aria-label="Toggle dark mode"
         >
-          🌓
+          🌙
         </button>
       </nav>
     </header>
@@ -82,8 +95,11 @@
         class="text-center my-10 fade-in"
         aria-labelledby="hero-title"
       >
-        <!-- Optional: Add a profile image/avatar -->
-        <!-- <img src="profile.jpg" alt="Louis Alfred Fontelo" class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg"> -->
+        <img
+          src="/img/profile.png"
+          alt="Louis Alfred Fontelo"
+          class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg"
+        />
         <h2 id="hero-title" class="text-3xl font-bold mb-2">
           Hi, I'm Louis Alfred Fontelo
         </h2>
@@ -128,12 +144,12 @@
             A responsive portfolio website built with HTML, Tailwind CSS, and
             JavaScript to showcase my skills and projects.
           </p>
-          <a
+          <!-- <a
             href="https://your-portfolio-url.com/"
             target="_blank"
             class="text-blue-500 hover:underline"
             >View Project</a
-          >
+          > -->
         </div>
         <!-- Add more projects as needed -->
       </section>
