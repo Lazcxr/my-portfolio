@@ -41,17 +41,32 @@ document.addEventListener('DOMContentLoaded', () => {
     btn?.addEventListener('click', toggleTheme);
   });
 
-  // === Mobile Nav Toggle ===
+  // === Mobile Nav Toggle with Spin Animation ===
   const menuToggle = document.getElementById('menu-toggle');
+  const menuIcon = document.getElementById('menu-icon');
   const mobileNav = document.getElementById('mobile-nav');
 
   menuToggle?.addEventListener('click', () => {
+    const isClosing = !mobileNav.classList.contains('hidden');
     mobileNav?.classList.toggle('hidden');
+
+    if (menuIcon) {
+      // Add spinning animation
+      menuIcon.classList.add('animate-spin-slow');
+
+      // Delay content change to match the spin
+      setTimeout(() => {
+        menuIcon.textContent = isClosing ? '☰' : '×';
+        menuIcon.classList.remove('animate-spin-slow');
+      }, 400); // matches 400ms spin animation
+    }
   });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
       mobileNav?.classList.add('hidden');
+      const menuIcon = document.getElementById('menu-icon');
+      if (menuIcon) menuIcon.textContent = '☰';
     }
   });
 
