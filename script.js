@@ -41,33 +41,54 @@ document.addEventListener('DOMContentLoaded', () => {
     btn?.addEventListener('click', toggleTheme);
   });
 
-  // === Mobile Nav Toggle with Animation ===
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuIcon = document.getElementById('menu-icon');
-  const mobileNav = document.getElementById('mobile-nav');
+// === Mobile Nav Toggle with Animation + Overlay + Link Close ===
+const menuToggle = document.getElementById('menu-toggle');
+const menuIcon = document.getElementById('menu-icon');
+const mobileNav = document.getElementById('mobile-nav');
+const overlay = document.getElementById('overlay');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
-  menuToggle?.addEventListener('click', () => {
-    const isClosing = !mobileNav.classList.contains('hidden');
-    mobileNav?.classList.toggle('hidden');
+menuToggle?.addEventListener('click', () => {
+  const isClosing = !mobileNav.classList.contains('hidden');
+  mobileNav?.classList.toggle('hidden');
+  overlay?.classList.toggle('hidden', isClosing);
 
-    if (menuIcon) {
-      // Animate icon change
-      menuIcon.classList.add('opacity-0', 'scale-75');
-      setTimeout(() => {
-        menuIcon.textContent = isClosing ? '☰' : '×';
-        menuIcon.classList.remove('scale-75');
-        menuIcon.classList.add('scale-100', 'opacity-100');
-      }, 150);
-    }
-  });
+  if (menuIcon) {
+    menuIcon.classList.add('opacity-0', 'scale-75');
+    setTimeout(() => {
+      menuIcon.textContent = isClosing ? '☰' : '×';
+      menuIcon.classList.remove('scale-75');
+      menuIcon.classList.add('scale-100', 'opacity-100');
+    }, 150);
+  }
+});
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
+// Close menu when overlay is clicked
+overlay?.addEventListener('click', () => {
+  mobileNav?.classList.add('hidden');
+  overlay?.classList.add('hidden');
+  if (menuIcon) menuIcon.textContent = '☰';
+});
+
+// Close menu on nav link click (except theme toggle)
+mobileNav?.querySelectorAll('a, button').forEach((el) => {
+  if (el !== themeToggleMobile) {
+    el.addEventListener('click', () => {
       mobileNav?.classList.add('hidden');
-      const menuIcon = document.getElementById('menu-icon');
+      overlay?.classList.add('hidden');
       if (menuIcon) menuIcon.textContent = '☰';
-    }
-  });
+    });
+  }
+});
+
+// Reset menu on resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    mobileNav?.classList.add('hidden');
+    overlay?.classList.add('hidden');
+    if (menuIcon) menuIcon.textContent = '☰';
+  }
+});
 
   // === Fade-In Animation on Scroll ===
   const faders = document.querySelectorAll('.fade-in');
