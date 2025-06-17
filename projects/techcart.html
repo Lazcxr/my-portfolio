@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TechCart Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 relative">
+    <!-- Header -->
+    <header class="bg-white shadow sticky top-0 z-40">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold">TechCart Store</h1>
+        <button id="cart-btn" class="text-2xl relative">
+          🛒
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+            >0</span
+          >
+        </button>
+      </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="max-w-7xl mx-auto px-4 py-6">
+      <h2 class="text-xl font-semibold mb-4">Filter Products</h2>
+      <div class="flex flex-wrap gap-4">
+        <select id="categoryFilter" class="p-2 border rounded">
+          <option value="all">All Categories</option>
+          <option value="accessory">Accessories</option>
+          <option value="laptop">Laptops</option>
+          <option value="component">Components</option>
+        </select>
+
+        <select id="priceFilter" class="p-2 border rounded">
+          <option value="all">All Prices</option>
+          <option value="low">Below 1000</option>
+          <option value="high">1000 and above</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Notification -->
+    <div
+      id="notification"
+      class="hidden fixed left-1/2 transform -translate-x-1/2 top-20 bg-green-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-lg z-50 opacity-0 transition-opacity duration-300"
+    ></div>
+
+    <!-- Product Grid -->
+    <section
+      id="productGrid"
+      class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 md:grid-cols-3 gap-6 pb-10"
+    ></section>
+
+    <!-- Slide-in Cart Drawer -->
+    <div
+      id="cartModal"
+      class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 flex flex-col"
+    >
+      <!-- Header -->
+      <div class="p-6 border-b flex justify-between items-center">
+        <h3 class="text-lg font-semibold">Your Cart</h3>
+        <button
+          id="closeCart"
+          class="text-gray-500 hover:text-red-500 text-2xl"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Scrollable cart items -->
+      <ul id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-2"></ul>
+
+      <!-- Fixed bottom section -->
+      <div class="p-6 border-t">
+        <div class="flex justify-between font-semibold mb-3">
+          <span>Total:</span>
+          <span id="cartTotal">0 THB</span>
+        </div>
+        <button
+          id="removeAll"
+          class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
+        >
+          Remove All
+        </button>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="cart.js"></script>
+  </body>
+</html>

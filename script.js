@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn?.addEventListener('click', toggleTheme);
   });
 
-  // === Mobile Nav Toggle with Spin Animation ===
+  // === Mobile Nav Toggle with Animation ===
   const menuToggle = document.getElementById('menu-toggle');
   const menuIcon = document.getElementById('menu-icon');
   const mobileNav = document.getElementById('mobile-nav');
@@ -51,14 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav?.classList.toggle('hidden');
 
     if (menuIcon) {
-      // Add spinning animation
-      menuIcon.classList.add('animate-spin-slow');
-
-      // Delay content change to match the spin
+      // Animate icon change
+      menuIcon.classList.add('opacity-0', 'scale-75');
       setTimeout(() => {
         menuIcon.textContent = isClosing ? '☰' : '×';
-        menuIcon.classList.remove('animate-spin-slow');
-      }, 400); // matches 400ms spin animation
+        menuIcon.classList.remove('scale-75');
+        menuIcon.classList.add('scale-100', 'opacity-100');
+      }, 150);
     }
   });
 

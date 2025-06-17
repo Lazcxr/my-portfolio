@@ -1,8 +1,4 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer utilities {
-  .animate-spin-slow {
-    animation: spin 0.4s linear;
-  }
-}
+

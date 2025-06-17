@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Portfolio</title>
+    <link href="../src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
+    <!-- Header -->
+    <header class="p-4 shadow-md bg-white dark:bg-gray-800 sticky top-0 z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">John Doe</h1>
+        <nav class="space-x-4 hidden md:block">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#skills" class="hover:underline">Skills</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center py-12 px-4">
+      <img
+        src="../img/profile.png"
+        alt="Profile Picture"
+        class="mx-auto w-32 h-32 rounded-full shadow-lg mb-4"
+      />
+      <h2 class="text-3xl font-bold mb-2">Hi, I'm John Doe</h2>
+      <p class="text-lg max-w-xl mx-auto">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus
+        optio excepturi voluptate, totam fugit exercitationem praesentium quia
+        eveniet, voluptatem ipsam eius minima debitis in nulla cum aut minus
+        officia adipisci!
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-3xl mx-auto px-4 py-10">
+      <h3 class="text-2xl font-bold mb-4">About Me</h3>
+      <p class="leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+        accusantium! Tenetur porro quae distinctio deleniti iusto temporibus
+        maiores, dolorum nihil eaque minima at mollitia quaerat illo cupiditate
+        deserunt possimus voluptatem. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. In quod saepe et eligendi ut fuga, reiciendis quos
+        neque nostrum dolores ad sit sint, rerum sequi at tenetur eum enim
+        corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Minima saepe quaerat ea, tenetur quidem id? Ipsa laudantium, harum
+        dolorum explicabo in tempora veniam sint possimus ut quam sit fuga aut.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="max-w-3xl mx-auto px-4 py-10">
+      <h3 class="text-2xl font-bold mb-4">What I Can Do</h3>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">HTML</li>
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">CSS</li>
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+          JavaScript
+        </li>
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+          Tailwind CSS
+        </li>
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">Git</li>
+        <li class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+          Responsive Design
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="text-center py-10 px-4 bg-gray-50 dark:bg-gray-800"
+    >
+      <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
+      <p class="mb-2">
+        Email:
+        <a href="mailto:john@example.com" class="text-blue-500 hover:underline">
+          john@example.com
+        </a>
+      </p>
+      <p>Location: [Your City, Country]</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+      &copy; 2025 John Doe. All rights reserved.
+    </footer>
+  </body>
+</html>
