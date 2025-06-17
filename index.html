@@ -27,10 +27,12 @@
     </style>
   </head>
   <body
-    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+    class="scroll-smooth bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300"
   >
     <!-- Header -->
-    <header class="bg-gray-900 text-white px-6 py-2 shadow-md">
+    <header
+      class="bg-gray-900/70 backdrop-blur-md backdrop-saturate-150 text-white px-6 py-2 shadow-md fixed top-0 w-full z-50"
+    >
       <div
         class="max-w-7xl mx-auto flex items-center justify-between min-h-[64px]"
       >
@@ -91,9 +93,12 @@
       </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6">
+    <main class="max-w-4xl mx-auto px-6 pt-24">
       <!-- Hero Section -->
-      <section id="hero" class="text-center my-16">
+      <section
+        id="hero"
+        class="text-center my-16 min-h-screen flex flex-col justify-center"
+      >
         <img
           src="img/profile.png"
           alt="Louis Alfred Fontelo"
@@ -106,7 +111,10 @@
       </section>
 
       <!-- About -->
-      <section id="about" class="my-16">
+      <section
+        id="about"
+        class="my-16 min-h-screen flex flex-col justify-center"
+      >
         <h2 class="text-3xl font-bold mb-4">About Me</h2>
         <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
           I'm a web developer focused on building clean, responsive, and
@@ -121,7 +129,10 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects" class="my-16">
+      <section
+        id="projects"
+        class="my-16 min-h-screen flex flex-col justify-center"
+      >
         <h2 class="text-3xl font-bold mb-6">Projects</h2>
 
         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md mb-6">
@@ -154,7 +165,10 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="text-center my-20">
+      <section
+        id="contact"
+        class="text-center my-20 min-h-screen flex flex-col justify-center"
+      >
         <h2 class="text-3xl font-bold mb-2">Contact</h2>
         <p class="text-base text-gray-600 dark:text-gray-300">
           Email:
