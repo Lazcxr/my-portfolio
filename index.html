@@ -105,11 +105,11 @@
         class="text-center my-16 min-h-screen flex flex-col justify-center"
       >
         <img
-          src="img/profile.png"
+          src="img/profile.jpg"
           alt="Louis Alfred Fontelo"
           class="mx-auto w-36 h-36 rounded-full shadow-md mb-4"
         />
-        <h2 class="text-4xl font-bold mb-2">Hello, I'm Louis Alfred Fontelo</h2>
+        <h2 class="text-4xl font-bold mb-2">Louis Alfred Fontelo</h2>
         <p class="text-lg text-gray-600 dark:text-gray-300">
           IT Support Specialist | Web Developer | Freelancer
         </p>
@@ -172,17 +172,81 @@
       <!-- Contact -->
       <section
         id="contact"
-        class="text-center my-20 min-h-screen flex flex-col justify-center"
+        class="text-center my-20 min-h-screen flex flex-col justify-center px-4"
       >
-        <h2 class="text-3xl font-bold mb-2">Contact</h2>
-        <p class="text-base text-gray-600 dark:text-gray-300">
-          Email:
-          <a
-            href="mailto:louisalfredfontelo@gmail.com"
-            class="text-blue-600 hover:underline"
-            >louisalfredfontelo@gmail.com</a
-          >
+        <h2 class="text-4xl font-bold mb-6">Contact</h2>
+        <p
+          class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto"
+        >
+          If you'd like to get in touch, feel free to drop a message using the
+          form below.
         </p>
+
+        <form
+          action="https://formsubmit.co/louisf@mvschool.ac.th"
+          method="POST"
+          class="max-w-xl mx-auto w-full space-y-6"
+        >
+          <!-- Hide CAPTCHA and redirect after submit -->
+          <input type="hidden" name="_captcha" value="true" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://lazcxr.github.io/my-portfolio/thank-you.html"
+          />
+
+          <div>
+            <label
+              for="name"
+              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-xl transition duration-200 shadow-md dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900"
+          >
+            Send Message
+          </button>
+        </form>
       </section>
     </main>
 
