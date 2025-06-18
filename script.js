@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
+
+  // Theme toggle buttons
   const themeButtons = [
     document.getElementById('theme-toggle-desktop'),
     document.getElementById('theme-toggle-mobile')
   ];
 
-  // === Theme ===
+  // === Theme functions ===
   const setThemeIcon = () => {
     const isDark = html.classList.contains('dark');
     themeButtons.forEach(btn => {
       if (btn) {
         btn.textContent = isDark ? '🌞' : '🌙';
         btn.classList.add('scale-110', 'rotate-12');
-
-        // Reset animation classes after animation
         setTimeout(() => {
           btn.classList.remove('scale-110', 'rotate-12');
         }, 300);
@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const applySavedTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    if (localStorage.getItem('theme') === 'dark') {
       html.classList.add('dark');
     }
     setThemeIcon();
@@ -36,59 +35,55 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   applySavedTheme();
+  themeButtons.forEach(btn => btn?.addEventListener('click', toggleTheme));
 
-  themeButtons.forEach(btn => {
-    btn?.addEventListener('click', toggleTheme);
+  // === Mobile Nav Toggle & Overlay ===
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuIcon = document.getElementById('menu-icon');
+  const mobileNav = document.getElementById('mobile-nav');
+  const overlay = document.getElementById('overlay');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+  menuToggle?.addEventListener('click', () => {
+    const isClosing = !mobileNav.classList.contains('hidden');
+    mobileNav.classList.toggle('hidden');
+    overlay.classList.toggle('hidden', isClosing);
+
+    if (menuIcon) {
+      menuIcon.classList.add('opacity-0', 'scale-75');
+      setTimeout(() => {
+        menuIcon.textContent = isClosing ? '☰' : '×';
+        menuIcon.classList.remove('scale-75');
+        menuIcon.classList.add('scale-100', 'opacity-100');
+      }, 150);
+    }
   });
 
-// === Mobile Nav Toggle with Animation + Overlay + Link Close ===
-const menuToggle = document.getElementById('menu-toggle');
-const menuIcon = document.getElementById('menu-icon');
-const mobileNav = document.getElementById('mobile-nav');
-const overlay = document.getElementById('overlay');
-const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-
-menuToggle?.addEventListener('click', () => {
-  const isClosing = !mobileNav.classList.contains('hidden');
-  mobileNav?.classList.toggle('hidden');
-  overlay?.classList.toggle('hidden', isClosing);
-
-  if (menuIcon) {
-    menuIcon.classList.add('opacity-0', 'scale-75');
-    setTimeout(() => {
-      menuIcon.textContent = isClosing ? '☰' : '×';
-      menuIcon.classList.remove('scale-75');
-      menuIcon.classList.add('scale-100', 'opacity-100');
-    }, 150);
-  }
-});
-
-// Close menu when overlay is clicked
-overlay?.addEventListener('click', () => {
-  mobileNav?.classList.add('hidden');
-  overlay?.classList.add('hidden');
-  if (menuIcon) menuIcon.textContent = '☰';
-});
-
-// Close menu on nav link click (except theme toggle)
-mobileNav?.querySelectorAll('a, button').forEach((el) => {
-  if (el !== themeToggleMobile) {
-    el.addEventListener('click', () => {
-      mobileNav?.classList.add('hidden');
-      overlay?.classList.add('hidden');
-      if (menuIcon) menuIcon.textContent = '☰';
-    });
-  }
-});
-
-// Reset menu on resize
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 768) {
-    mobileNav?.classList.add('hidden');
-    overlay?.classList.add('hidden');
+  overlay?.addEventListener('click', () => {
+    mobileNav.classList.add('hidden');
+    overlay.classList.add('hidden');
     if (menuIcon) menuIcon.textContent = '☰';
-  }
-});
+  });
+
+  // Close mobile nav on link/button click except theme toggle
+  mobileNav?.querySelectorAll('a, button').forEach(el => {
+    if (el !== themeToggleMobile) {
+      el.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        overlay.classList.add('hidden');
+        if (menuIcon) menuIcon.textContent = '☰';
+      });
+    }
+  });
+
+  // Reset mobile menu on window resize ≥ 768px
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      mobileNav.classList.add('hidden');
+      overlay.classList.add('hidden');
+      if (menuIcon) menuIcon.textContent = '☰';
+    }
+  });
 
   // === Fade-In Animation on Scroll ===
   const faders = document.querySelectorAll('.fade-in');
@@ -99,9 +94,10 @@ window.addEventListener('resize', () => {
 
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('opacity-100', 'translate-y-0');
-      observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
     });
   }, appearOptions);
 
@@ -109,4 +105,24 @@ window.addEventListener('resize', () => {
     fader.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
     appearOnScroll.observe(fader);
   });
+
+   // === Smooth Scrolling + Close Mobile Nav ===
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: 'smooth' });
+
+      // Close mobile nav if open and not theme toggle
+      if (window.innerWidth < 768 && this !== themeToggleMobile) {
+        mobileNav?.classList.add('hidden');
+        overlay?.classList.add('hidden');
+        if (menuIcon) menuIcon.textContent = '☰';
+      }
+    });
+  });
+
 });

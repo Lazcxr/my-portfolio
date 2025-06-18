@@ -27,66 +27,55 @@
     </style>
   </head>
   <body
-    class="scroll-smooth bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+    class="scroll-smooth bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300 text-sm md:text-base leading-relaxed"
   >
     <!-- Header -->
     <header
-      class="bg-gray-900/70 backdrop-blur-md backdrop-saturate-150 text-white px-6 py-2 shadow-md fixed top-0 w-full z-50"
+      class="bg-gray-900/70 backdrop-blur-md text-white px-4 py-2 shadow fixed top-0 w-full z-50"
     >
       <div
-        class="max-w-7xl mx-auto flex items-center justify-between min-h-[64px]"
+        class="max-w-7xl mx-auto flex items-center justify-between min-h-[40px]"
       >
-        <a href="./" class="flex items-center gap-2">
-          <img
-            src="img/logo.svg"
-            alt="Louis Alfred Logo"
-            class="h-[64px] w-auto"
-          />
+        <a href="#hero" class="flex items-center gap-2">
+          <img src="img/logo.svg" alt="Louis Alfred Logo" class="h-12 w-auto" />
           <span class="sr-only">Louis Alfred</span>
         </a>
-
         <button
           id="menu-toggle"
-          class="md:hidden text-3xl"
+          class="md:hidden text-2xl"
           aria-label="Open navigation menu"
         >
           <span id="menu-icon">☰</span>
         </button>
-        <nav class="hidden md:flex gap-8 text-base">
+        <nav class="hidden md:flex gap-6 text-sm">
           <a href="#about" class="hover:underline">About</a>
           <a href="#projects" class="hover:underline">Projects</a>
           <a href="#contact" class="hover:underline">Contact</a>
-          <button id="theme-toggle-desktop" class="text-2xl">🌙</button>
+          <button id="theme-toggle-desktop" class="text-xl">🌙</button>
         </nav>
       </div>
-      <!-- Mobile Navigation -->
       <nav
         id="mobile-nav"
-        class="hidden flex-col gap-3 mt-2 md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-md p-2 mx-2"
-        aria-label="Mobile navigation"
+        class="hidden flex-col gap-2 mt-2 md:hidden bg-white dark:bg-gray-900 rounded shadow p-2 mx-2"
       >
         <a
           href="#about"
-          class="block text-base font-medium text-gray-800 dark:text-white py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          class="block text-sm py-2 px-3 rounded text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          >About</a
         >
-          About
-        </a>
         <a
           href="#projects"
-          class="block text-base font-medium text-gray-800 dark:text-white py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          class="block text-sm py-2 px-3 rounded text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          >Projects</a
         >
-          Projects
-        </a>
         <a
           href="#contact"
-          class="block text-base font-medium text-gray-800 dark:text-white py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          class="block text-sm py-2 px-3 rounded text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          >Contact</a
         >
-          Contact
-        </a>
         <button
           id="theme-toggle-mobile"
-          class="text-left text-base font-medium text-gray-800 dark:text-white py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          aria-label="Toggle dark mode"
+          class="text-left text-sm py-2 px-3 rounded text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition"
         >
           🌙 Toggle Theme
         </button>
@@ -98,30 +87,28 @@
       class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 hidden md:hidden"
     ></div>
 
-    <main class="max-w-4xl mx-auto px-6 pt-24">
-      <!-- Hero Section -->
+    <main class="transition-opacity duration-500 max-w-4xl mx-auto px-4 pt-24">
       <section
         id="hero"
-        class="text-center my-16 min-h-screen flex flex-col justify-center"
+        class="fade-in text-center my-12 min-h-screen flex flex-col justify-center"
       >
         <img
           src="img/profile.jpg"
           alt="Louis Alfred Fontelo"
-          class="mx-auto w-36 h-36 rounded-full shadow-md mb-4"
+          class="mx-auto w-28 h-28 rounded-full shadow mb-3"
         />
-        <h2 class="text-4xl font-bold mb-2">Louis Alfred Fontelo</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300">
+        <h2 class="text-3xl font-bold mb-1">Louis Alfred Fontelo</h2>
+        <p class="text-base text-gray-600 dark:text-gray-300">
           IT Support Specialist | Web Developer | Freelancer
         </p>
       </section>
 
-      <!-- About -->
       <section
         id="about"
-        class="my-16 min-h-screen flex flex-col justify-center"
+        class="fade-in my-12 min-h-screen flex flex-col justify-center"
       >
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+        <h2 class="text-2xl font-bold mb-3">About Me</h2>
+        <p class="text-sm text-gray-700 dark:text-gray-300">
           I'm an IT Support Specialist and web developer focused on building
           clean, responsive, and user-friendly websites. I currently work at
           Maryvit Affiliated Schools, managing platforms like Schoology,
@@ -133,50 +120,48 @@
         </p>
       </section>
 
-      <!-- Projects -->
       <section
         id="projects"
-        class="my-16 min-h-screen flex flex-col justify-center"
+        class="fade-in my-12 min-h-screen flex flex-col justify-center"
       >
-        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <h2 class="text-2xl font-bold mb-5">Projects</h2>
 
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md mb-6">
-          <h3 class="text-xl font-semibold mb-2">Personal Portfolio Website</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow mb-4">
+          <h3 class="text-lg font-semibold mb-1">Personal Portfolio Website</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
             A responsive portfolio website template built with HTML and Tailwind
             CSS.
           </p>
           <a
             href="projects/portfolio.html"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-blue-600 hover:underline text-sm"
             >View Project</a
           >
         </div>
 
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-semibold mb-2">TechCart Store</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-1">TechCart Store</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
             A simple single-page E-Commerce website with a Cart System and
             Product Filter functions built with JavaScript.
           </p>
           <a
             href="projects/techcart.html"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-blue-600 hover:underline text-sm"
             >View Project</a
           >
         </div>
       </section>
 
-      <!-- Contact -->
       <section
         id="contact"
-        class="text-center my-20 min-h-screen flex flex-col justify-center px-4"
+        class="text-center my-16 min-h-screen flex flex-col justify-center px-4 fade-in"
       >
-        <h2 class="text-4xl font-bold mb-6">Contact</h2>
+        <h2 class="text-3xl font-bold mb-5">Contact</h2>
         <p
-          class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto"
+          class="text-base text-gray-600 dark:text-gray-300 mb-6 max-w-xl mx-auto"
         >
           If you'd like to get in touch, feel free to drop a message using the
           form below.
@@ -185,9 +170,8 @@
         <form
           action="https://formsubmit.co/louisf@mvschool.ac.th"
           method="POST"
-          class="max-w-xl mx-auto w-full space-y-6"
+          class="max-w-xl mx-auto w-full space-y-4"
         >
-          <!-- Hide CAPTCHA and redirect after submit -->
           <input type="hidden" name="_captcha" value="true" />
           <input
             type="hidden"
@@ -198,7 +182,7 @@
           <div>
             <label
               for="name"
-              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              class="block text-left text-xs font-medium text-gray-700 dark:text-gray-200"
               >Name</label
             >
             <input
@@ -206,14 +190,14 @@
               id="name"
               name="name"
               required
-              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2 text-sm shadow-sm focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div>
             <label
               for="email"
-              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              class="block text-left text-xs font-medium text-gray-700 dark:text-gray-200"
               >Email</label
             >
             <input
@@ -221,28 +205,28 @@
               id="email"
               name="email"
               required
-              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2 text-sm shadow-sm focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div>
             <label
               for="message"
-              class="block text-left text-sm font-medium text-gray-700 dark:text-gray-200"
+              class="block text-left text-xs font-medium text-gray-700 dark:text-gray-200"
               >Message</label
             >
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows="4"
               required
-              class="mt-1 block w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+              class="mt-1 block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2 text-sm shadow-sm focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-xl transition duration-200 shadow-md dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900"
+            class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900 text-sm"
           >
             Send Message
           </button>
@@ -250,12 +234,10 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-6">
+    <footer class="text-center text-xs text-gray-500 dark:text-gray-400 py-4">
       <p>&copy; 2025 LA.</p>
     </footer>
 
-    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
